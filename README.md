@@ -14,7 +14,7 @@
 ```
 git clone https://github.com/rafeldev/reto_meli
 ```
-3. **Move to project**: 
+2. **Move to project**: 
 ```
 cd reto_meli
 ```
