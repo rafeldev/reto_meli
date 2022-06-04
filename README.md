@@ -7,7 +7,7 @@
 - React Router
 - Axios
 - SASS
-- 
+
 ## Installation 🔨
 
 1. **Clone Project**: 
