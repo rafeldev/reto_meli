@@ -1,5 +1,4 @@
 import React from 'react'
-import { Routes, Route, Link } from "react-router-dom";
 
 import { formatCurrency } from '../../utils/formatCurrency'
 
@@ -7,7 +6,7 @@ import './style.scss'
 
 import tag from '../../assets/img/ic_shipping.png'
 
-const Index = ({ item, query, handleIdClick }) => {
+const Index = ({ item, handleIdClick }) => {
   return (
     <>
         <div className='item--container' onClick={() => handleIdClick(item.id)}>
@@ -25,7 +24,7 @@ const Index = ({ item, query, handleIdClick }) => {
               <p>{item?.title}</p>
             </div>
             <div className='item--city'>
-              <span>capital federal</span>
+              {/* <span>{item.}</span> */}
             </div>
           </div>
         </div>

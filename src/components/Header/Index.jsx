@@ -26,6 +26,7 @@ const Index = ({
           onChange={(e) => handleChange(e)}
           name='query'
           id='query'
+          autoComplete='off'
         />
         <button 
           className='header--form-button' 
