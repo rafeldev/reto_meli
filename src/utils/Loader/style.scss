@@ -1,0 +1,17 @@
+.LoaderContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  /* background-color: #f8f8f8AD; */
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.wraper {
+  position: absolute;
+  top: 25%;
+  left: 45%;
+  z-index: 15;
+}

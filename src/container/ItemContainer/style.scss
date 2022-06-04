@@ -1,0 +1,9 @@
+@import '../../scss/variables.scss';
+
+.container--item {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: $spacingSm;
+  height: auto;
+  background-color: #fff;
+}

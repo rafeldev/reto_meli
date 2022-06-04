@@ -1,0 +1,71 @@
+@import '../../scss/variables.scss';
+
+.Link {
+  color: #000;
+  text-decoration: none;
+}
+.item--container {
+  display: flex;
+  width: 100%;
+  cursor: pointer;
+  // grid-template-columns: 1fr 1fr 1fr;
+
+  // width: 70%;
+  & .item--container-img {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: $spacingSm;
+    & .item--img {
+      width: 176px;
+      height: 179px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+  }
+}
+
+.item--description {
+  text-align: left;
+  & .item--container-tag {
+    display: flex;
+    align-items: center;
+    & img {
+      width: 15px;
+      height: 15px;
+    }
+  }
+  & h2 {
+    margin-top: $spacingMd;
+    margin-bottom: $spacingMd;
+    font-size: 24px;
+    font-weight: normal;
+    margin-right: 10px;
+
+  }
+  & p {
+    margin: 0;
+    font-size: 18px;
+  }
+}
+
+.item--container-text {
+  width: 65%;
+  display: flex;
+  justify-content: space-between; 
+
+  & .item--city {
+    margin-top: $spacingMd + 30px;
+    width: 40%;
+    text-align: right;
+    
+    & span {
+      font-size: 12px;
+    }
+  }
+}
+
+.separador {
+  width: 95%;
+  border-color: #fffdfd36;
+}
