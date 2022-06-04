@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types';
+
 import './style.scss'
 import { formatCurrency } from '../../utils/formatCurrency'
 
@@ -24,5 +26,11 @@ const Index = ({idItem}) => {
     </div>
   )
 }
+
+
+Index.propTypes = {
+  idItem: PropTypes.object.isRequired
+}
+
 
 export default Index

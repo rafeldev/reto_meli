@@ -1,5 +1,5 @@
+/* Esta funcion formatea cualquier entero a moneda */
 export const formatCurrency = (value, fix = 0) => {
-  // return currencyFormatter(value, fix);
   const regExp = /\B(?=(\d{3})+(?!\d))/g;
   const amount = String(value).replace(regExp, '.');
 

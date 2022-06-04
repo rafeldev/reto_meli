@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types';
+
 import DetailItem from '../../components/DetailItem/Index'
 import './style.scss'
 
@@ -12,6 +14,12 @@ const Index = ({idItem, loading}) => {
       <Loading isLoading={loading} />
     </div>
   )
+}
+
+
+Index.propTypes = {
+  idItem: PropTypes.object,
+  loading: PropTypes.bool
 }
 
 export default Index

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios'
 import { Routes, Route, useNavigate } from "react-router-dom";
 import './App.css';
@@ -20,39 +20,42 @@ function App() {
   const history = useNavigate();
   const URL = 'http://localhost:3001/'
 
+
+  /* Peticion al listado de productos */
   const fetchData = async (query) => {
     setLoading(true)
     const response = await axios.get(`${URL}api/items?q=${query}`)
     setLoading(false)
     setItems(response.data)
   }
-  
+
+  /* Peticion por id a cada producto con su descripcion */
   const fetchDataId = async (id) => {
     setLoading(true)
     const response = await axios.get(`${URL}api/items/${id}`)
     setLoading(false)
     setIdItems(response.data)
-
   }
 
-
+  /* Funcion que que obtiene el id del producto y navega al detalle */
   const handleIdClick = (id) => {
     setId(id)
     fetchDataId(id)
     history(`/items/${id}`)
   }
 
+  /* Funcion que obtiene el valorl input */
   const handleChange = (e) => {
     setQuery(e.target.value)
   }
 
+  /* Funcion que ejecuta la peticion de los items y navega a la pantalla de lista de items */
   const handleSubmit = (e) => {
     e.preventDefault()
     fetchData(query)
-    history(`/items/${query}`)
+    history(`/items?search=${query}`)
   }
 
-  // console.log(items ? items.author.name === 'Rafael' : 'hola', 'bool')
   return (
     <div className="App">
       <Header
@@ -68,13 +71,18 @@ function App() {
           element={<Home />}
         />
         <Route
-          path={`/items/${query}`}
-          element={items?.author?.name === 'Rafael' && <ItemContainer loading={loading} handleIdClick={handleIdClick} query={query} items={items} />} 
+          exact
+          path={`/items`}
+          element={items?.author?.name === 'Rafael' && <ItemContainer loading={loading} handleIdClick={handleIdClick} query={query} items={items} />}
         />
-        <Route
-          path={`/items/${id}`}
-          element={items?.author?.name === 'Rafael' && <DetailContainer loading={loading} idItem={idItem} />} 
-        />
+        {
+          id &&
+          <Route
+            exact
+            path={`/items/${id}`}
+            element={items?.author?.name === 'Rafael' && <DetailContainer loading={loading} idItem={idItem} />}
+          />
+        }
       </Routes>
     </div>
   );

@@ -22,7 +22,7 @@ const FullPageLoader = ({ isLoading }) => {
 };
 
 FullPageLoader.propTypes = {
-  isLoading: PropTypes.bool
+  isLoading: PropTypes.bool.isRequired
 }
 
 export default FullPageLoader;
